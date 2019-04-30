@@ -12,6 +12,10 @@ class Rational(val n: Int, val d: Int) {
             numerator * that.denominator + that.numerator * denominator,
             denominator * that.denominator
         )
+
+    operator fun plus(n: Int): Rational =
+        Rational(numerator + n * denominator, denominator)
+
     override fun toString(): String  = "${numerator}/${denominator}"
 
     tailrec private fun gcd(a: Int, b: Int): Int =
@@ -19,8 +23,9 @@ class Rational(val n: Int, val d: Int) {
         else gcd(b, a % b)
 }
 
+operator fun Int.plus(r: Rational): Rational = r + this
+
 fun main(args: Array<String>) {
-    println(Rational(1,4) + (Rational(1,2)))
-    println(Rational(1,3) + (Rational(4,7)))
-    println(Rational(1,6) + Rational(1,3 ) + Rational(1,2))
+    println(Rational(1,6) + 2)
+    println(2 + Rational(1,6))
 }
