@@ -1,5 +1,7 @@
 package sample
 
+import java.util.concurrent.atomic.DoubleAccumulator
+
 //fun succ(i: Int): Int = i + 1
 
 fun succ(i: Int) = i + 1
@@ -29,6 +31,9 @@ fun argsum(vararg ints: Int): Int {
     return out
 }
 
+//tailrec fun tocsum(numbers: List<Long>, accumulator: Long = 0): Long =
+//        if (numbers.isEmpty()) accumulator
+//        else tocsum(numbers.drop(), accumulator + numbers.first())
 
 fun main(args: Array<String>) {
     val result = succ(succ(succ(3)))
@@ -37,4 +42,5 @@ fun main(args: Array<String>) {
     println(square(5))
     println(sum(arrayOf(1,2,3)))
     println(argsum(*intArrayOf(1,2,3)))
+//    println(tocsum((1L..123456).toList()))
 }
