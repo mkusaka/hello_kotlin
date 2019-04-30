@@ -21,10 +21,20 @@ fun sum(ints: Array<Int>): Int {
     return sum
 }
 
+fun argsum(vararg ints: Int): Int {
+    var out = 0
+    for (i in ints) {
+        out += i
+    }
+    return out
+}
+
+
 fun main(args: Array<String>) {
     val result = succ(succ(succ(3)))
     println(result)
     println(succ(pow(2,3)))
     println(square(5))
     println(sum(arrayOf(1,2,3)))
+    println(argsum(*intArrayOf(1,2,3)))
 }
