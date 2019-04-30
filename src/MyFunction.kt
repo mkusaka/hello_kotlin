@@ -35,6 +35,18 @@ fun argsum(vararg ints: Int): Int {
 //        if (numbers.isEmpty()) accumulator
 //        else tocsum(numbers.drop(), accumulator + numbers.first())
 
+class Counter {
+    private var cnt = 0
+
+    fun countup():  Unit {
+        cnt++
+    }
+
+    fun getCount(): Int = cnt
+}
+
+
+
 fun main(args: Array<String>) {
     val result = succ(succ(succ(3)))
     println(result)
